@@ -8,5 +8,5 @@ print(af)
 
 e=int(input())#int用於文字轉換數字
 print(e*5)
-f=str(2)
+f=str(input())#str用於數字轉換文字
 print(f*20)
