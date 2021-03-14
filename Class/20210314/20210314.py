@@ -12,7 +12,7 @@ print('P\nY\nT\nH\nO\nN')
 print(type("hello"))# 字串( str )
 print(type(1))# 整數( int )
 print(type(True))# " True " 以及 " False " 屬於布林值( bool )，用於判斷真假。
-print(type(1.))# 浮動值( float )的特色在於具有小數點(.)
+print(type(1.))# 浮點數( float )的特色在於具有小數點(.)
 #'''
 
 '''
