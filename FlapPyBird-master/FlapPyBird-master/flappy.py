@@ -6,9 +6,9 @@ import pygame
 from pygame.locals import *
 
 
-FPS = 50
-SCREENWIDTH  = 1000
-SCREENHEIGHT = 720
+FPS = 30
+SCREENWIDTH  = 200
+SCREENHEIGHT = 480
 PIPEGAPSIZE  = 900 # gap between upper and lower part of pipe
 BASEY        = SCREENHEIGHT * 0.79
 # image, sound and hitmask  dicts
