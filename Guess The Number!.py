@@ -1,6 +1,7 @@
 import random
 while True:
     ans=random.randint(1,99)
+    print(ans)
     rangea=1
     rangeb=99
     rounds=0
@@ -11,7 +12,7 @@ while True:
             g=int(g)
         except:
             print('Invalid.')
-            continue
+            pass
         else:
             if g==ans:
                 rounds+=1
@@ -22,13 +23,17 @@ while True:
                 rounds+=1
                 rangea=g
                 print('Incorrect.')
-                continue
+                pass
             elif g>ans and g<rangeb:
                 rounds+=1
                 rangeb=g
                 print('Incorrect.')
-                continue
+                pass
             else:
                 print('I suggest not to waste your guesses, dear player.\nTake note of that range.')
-                continue
-    w=input('Still want to play another round?\n(If yes,please enter A)'
+                pass
+    w=input('Still want to play another round?\n(If yes,please enter Y,\nIf no, enter N.)')
+    if w=='Y':
+        continue
+    else:
+        break
