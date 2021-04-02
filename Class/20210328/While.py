@@ -6,6 +6,7 @@ while n>0:
     n-=1
 #顯示 1～9
 '''
+'''
 while True:
     n=input('終止值')
     ans=0
@@ -18,9 +19,9 @@ while True:
         for i in range(1, n+1):
             ans+=i
         print(ans)
-
+'''
 n=int(input())
 for a in range(1,n+1):
     while a<n*2:
-        print({}{}{}.format(' '*(n-a),'|'*a,' '*(n-a)))
+        print('{}{}{}'.format(' '*(n-a),'|'*a,' '*(n-a)))
     print('*')

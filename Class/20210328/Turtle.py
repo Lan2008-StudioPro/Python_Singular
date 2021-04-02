@@ -8,13 +8,12 @@ while True:
     w=1
     x=r.randint(-360,360)
     y=r.randint(-200,200)
-    #a=r.randint(0.0,255.0)
-    #g=r.randint(0,255)
-    #b=r.randint(0,255)
+    a=r.uniform(0.001,0.255)
+    g=r.uniform(0.001,0.255)
+    b=r.uniform(0.001,0.255)
     t.setx(x)
     t.sety(y)
-    #t.color((a,g,b))
-    t.color(0,1,1)
+    t.color((a,g,b))
     t.pendown()
     while w<=180:
         t.forward(q)
@@ -24,7 +23,6 @@ while True:
         w+=1
         t.shape('classic')
         t.stamp()
-
 
 
 
