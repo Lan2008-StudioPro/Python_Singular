@@ -6,8 +6,8 @@ while True:
     t.penup()
     q=1
     w=1
-    x=r.randint(-360,360)
-    y=r.randint(-200,200)
+    x=r.randint(-500,500)
+    y=r.randint(-300,300)
     a=r.uniform(0.001,0.255)
     g=r.uniform(0.001,0.255)
     b=r.uniform(0.001,0.255)
@@ -21,8 +21,5 @@ while True:
         t.speed(0)
         q+=1
         w+=1
-        t.shape('classic')
-        t.stamp()
-
 
 

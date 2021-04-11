@@ -23,8 +23,11 @@ while True:
     try:
         m=int(n)*2-1
     except:
-        print("{}'{}'".format('ValueError: invalid literal for int() with base 10: ',n)
+        print("{}'{}'".format('ValueError: invalid literal for int() with base 10: ',n))
     else:
-        while a!>n:
-        print('{}{}{}'.format(' '*[(m-1)/2-a+1],'*'*(a*2-1),' '*[(m-1)/2-a+1])
-        a+=1
+        for a in range(1,n+1)
+            print('{}{}{}'.format(' '*[(m-1)/2-a+1],'*'*(a*2-1),' '*[(m-1)/2-a+1]))
+        a=1
+        print('{}{}{}'.format(' '*[(m-1)/2-a+1],'*'*(a*2-1),' '*[(m-1)/2-a+1]))
+        print('{}{}{}'.format(' '*[(m-1)/2-a+1],'*'*(a*2-1),' '*[(m-1)/2-a+1]))
+        print('{}{}{}'.format(' '*[(m-1)/2-a+1],'*'*(a*2-1),' '*[(m-1)/2-a+1]))

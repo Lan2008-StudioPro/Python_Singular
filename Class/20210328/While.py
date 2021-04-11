@@ -24,4 +24,5 @@ n=int(input())
 for a in range(1,n+1):
     while a<n*2:
         print('{}{}{}'.format(' '*(n-a),'|'*a,' '*(n-a)))
+        a+=1
     print('*')
