@@ -13,3 +13,8 @@ for loop show list value
 
 只能用一個list個
 """
+for i in range( 0 , 5 ):
+    a = "00000:00000:00000:00000:00000"
+    a=a.split( ':' )
+    a[i]='99999'
+    print(':'.join(a))
