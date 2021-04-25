@@ -10,7 +10,6 @@ while null==0:
     while b==a:
         b=r.randint(0,9)
 
-
     # 生成十位數 c
     c=r.randint(0,9)
     while c==b or c==a:
@@ -21,8 +20,6 @@ while null==0:
     while d==c or d==b or d==a:
         d=r.randint(0,9)
 
-    #ans=[str(a),str(b),str(c),str(d)]
-    #print(''.join(ans))
     rounds=0
     history=[]
 
@@ -64,6 +61,7 @@ while null==0:
                 h=guess-1000*e-100*f-10*g
                 experiment=[e,f,g,h]
                 ans=[a,b,c,d]
+
                 for digits in range(0,4):
                     if experiment[digits] in ans and experiment[digits]!=ans[digits]:
                         B+=1
@@ -84,7 +82,7 @@ while null==0:
 
             else:
                 history.append(guess)
-                print("{}\n{}：{}{}{}{}".format('Answer incorrect.',guess,A,'A',B,'B'))
+                print("{}\n{:04d}：{}{}{}{}".format('Answer incorrect.',guess,A,'A',B,'B'))
                 t.sleep(1)
 
 print('Thanks for your playing!')

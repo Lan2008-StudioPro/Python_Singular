@@ -8,7 +8,7 @@
 list = [ "apple" , "ball" ,"car" ]
 print( list )
 while True :
-    a = input()
+    a = input('Welcome to the list checking system.\n')
     b = input( 'Select mode.\nType in 1 to try out the "index" mode.\nType in 2 to try out the "in" mode.\nYour mode : ')
     if b == '1' :
 
