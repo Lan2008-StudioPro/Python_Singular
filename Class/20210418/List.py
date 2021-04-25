@@ -55,11 +55,14 @@ while null==0:
                 continue
 
             else:
+                '''
                 e=guess//1000
                 f=(guess-1000*e)//100
                 g=(guess-1000*e-100*f)//10
                 h=guess-1000*e-100*f-10*g
                 experiment=[e,f,g,h]
+                '''
+                experiment=list(str(guess))
                 ans=[a,b,c,d]
 
                 for digits in range(0,4):
