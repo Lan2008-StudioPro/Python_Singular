@@ -10,31 +10,38 @@ def lcm(m, n):
     except ValueError:
         print('ValueError')
     else:
-        list_lcm_m = []
-        list_lcm_n = []
+        list_lcm_m = [m]
+        list_lcm_n = [n]
         cfactors = []
         lcmnum = 1
         while m > 1:
-            for a in range(2, m):
-                while m % a == 0:
-                    list_lcm_m.append(a)
-                    m /= a
-            else:
-                list_lcm_m.append(m)
+            for x in range(2, m):
+                if m % x == 0:
+                    list_lcm_m.remove(m)
+                    for a in range(2, m):
+                        while m % a == 0:
+                            list_lcm_m.append(a)
+                            m /= a
         cfactors.extend(list_lcm_m)
+        print(list_lcm_m)
         while n > 1:
-            for b in range(2, n):
-                while n % b == 0:
-                    list_lcm_n.append(b)
-                    n /= b
-            else:
-                list_lcm_n.append(n)
+            for y in range(2, n):
+                if n % y == 0:
+                    list_lcm_n.remove(n)
+                    for a in range(2, n):
+                        while n % a == 0:
+                            list_lcm_n.append(a)
+                            n /= a
         cfactors.extend(list_lcm_n)
-        for factorcheck in cfactors:
-            if list_lcm_m.count(factorcheck) > list_lcm_n.count(factorcheck):
-                lcmnum = factorcheck ** list_lcm_m.count(factorcheck)
+        print(list_lcm_n)
+        cfactors = set(cfactors)
+        print(cfactors)
+        for fcheck in cfactors:
+            if list_lcm_m.count(fcheck) > list_lcm_n.count(fcheck):
+                lcmnum *= fcheck ** list_lcm_m.count(fcheck)
             else:
-                lcmnum = factorcheck ** list_lcm_n.count(factorcheck)
+                lcmnum *= fcheck ** list_lcm_n.count(fcheck)
+            print(lcmnum)
         print(int(lcmnum))
 
-lcm(45, 72)
+lcm(18, 8)
