@@ -10,8 +10,6 @@ def lcm(m, n):
         int(n)
     except ValueError:
         print('ValueError')
-    except TypeError:
-        print('TypeError')
     else:
         m = int(m)
         n = int(n)
