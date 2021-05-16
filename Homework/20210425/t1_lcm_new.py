@@ -5,5 +5,7 @@ def lcm(a, b):
             print(m)
             break
         m += 1
-
-lcm(int(input()), int(input()))
+    return m
+a = int(input())
+b = int(input())
+print("[{}, {}] = {}".format(a, b, lcm(a, b)))

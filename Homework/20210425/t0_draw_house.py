@@ -39,4 +39,4 @@ def draw_house(a: int):
         t.pu()
         house += 1
 
-draw_house(10)  # Enter the amount of houses you want to draw with TURTLE.
+draw_house(10000)  # Enter the amount of houses you want to draw with TURTLE.
