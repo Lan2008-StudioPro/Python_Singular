@@ -3,14 +3,29 @@ import time as t
 import sys
 from keyboard import press
 
+# File System
+def file(path, info):
+    filing = open(path, 'w')
+    for i in info:
+        filing.write(str(i) + "\n")
+    filing.close()
+
+# Read System
+def read(path):
+    reading = open(path, 'r')
+    text = []
+    for line in reading:
+        text.append(int(line))
+    return text
+
 # Level-Up System
-def level(levelstatus: list):
+def level_up(levelstatus: list):
     levelup = 10 ** levelstatus[0]
     if levelstatus[1] == levelup:
         levelstatus[0] += 1
         levelstatus[1] = 0
         print("Level up!\nCurrent level : [{}]".format(levelstatus[0]))
-        level_atk_boost += 0.2
+        levelstatus[2] += 0.2
 
 # Reviving System
 def revived(stat: list):
@@ -37,11 +52,11 @@ def buy_inshop(stat: list):
             t.sleep(0.75)
             print("MP Potion - recover MP by a range of [{}] to [{}].\nThis costs 100$RpgD.".format(recover_min, recover_max))
             t.sleep(0.75)
-            confirm = input('Confirm purchase?\n(Press \'m\' again to confirm your MPpurchase.)\n')
+            confirm = input('Confirm purchase?\n(Press \'m\' again to confirm your MPpurchase.)')
 
             while True:
 
-                if confirm == 'm':
+                if confirm == 'b':
 
                     if stat[2] >= 100:
                         stat[3] += r.randint(recover_min, recover_max)
@@ -64,7 +79,7 @@ def buy_inshop(stat: list):
             t.sleep(0.75)
             print("HP Revive - restore HP by a range of [{}] to [{}].\nThis costs 100$RpgD.".format(revive_min, revive_max))
             t.sleep(0.75)
-            confirm = input('Confirm purchase?\n(Press \'l\' again to confirm your HPpurchase.)\n')
+            confirm = input('Confirm purchase?\n(Press \'l\' again to confirm your HPpurchase.)')
 
             while True:
 
@@ -300,7 +315,7 @@ def combat(stat, battle, levelstatus):
         battle[5] += 50
         t.sleep(0.75)
         print("Gained Exp!\nCurrent Exp : [{}]".format(levelstatus[1]))
-        levelstatus = level(levelstatus)
+        # levelstatus = level_up(levelstatus)
 
     return stat, battle, levelstatus
 
@@ -332,15 +347,26 @@ exp = 0  # Level-Up System - Currently Testing
 level_atk_boost = 1  # Power-Up System - Currently Testing
 
 player_name = input('Welcome to the RPG world!\nWhat is your name?\n')
-stat = [life, player_hp, money, mp, psc_atk_boost, m_atk_boost, level_atk_boost, player_atk, reel, level]
-battle = [atk_min, atk_max, enemy_atk, enemy_hp_max, enemy_hp_min, chance_max, mp_atk_min, mp_atk_max, enemy_hp]
+# stat = [life, player_hp, money, mp, psc_atk_boost, m_atk_boost, level_atk_boost, player_atk, reel, level]
+stat = read('stat.txt')
+# battle = [atk_min, atk_max, enemy_atk, enemy_hp_max, enemy_hp_min, chance_max, mp_atk_min, mp_atk_max, enemy_hp]
+battle = read('battle.txt')
 event = [revived, earning, enter_status]
-levelstatus = [level, exp, level_atk_boost]
+# levelstatus = [level, exp, level_atk_boost]
+levelstatus = read('levelstatus.txt')
+# player_info = [stat, battle, levelstatus, player_name]
+player_info = read('player_info.txt')
 while True:
-    print("Don't forget to save your gaming process, {}.".format(player_name))
-    input('File progress?\n')
+    depart = input('Leave game?\n(Press q to leave.)')
 
-    if True:
+    if depart == 'q':
+        file('stat.txt', stat)
+        file('battle.txt', battle)
+        file('levelstatus.txt', levelstatus)
+        file('player_info.txt', player_info)
+        print('Bye-bye.')
+        break
+    else:
         pass
 
     chance = r.randint(1, chance_max)
