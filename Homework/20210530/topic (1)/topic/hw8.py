@@ -18,7 +18,7 @@ Corns   5.2 5.96
 你應該如何完成05行的程式碼?請將適合的程式碼片段選項填到正確的位置上。
 每個程式碼片段都可以使用一次、多次,或者不使用。
 回答區
-"(A)(G)(C)(F).format(fields[0], eval(fields[1]), eval(fields[2])))
+"(A)(G)(F)(E).format(fields[0], eval(fields[1]), eval(fields[2])))
 程式碼片段
 A. print("
 B. {10:0}
